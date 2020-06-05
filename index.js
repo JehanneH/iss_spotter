@@ -37,10 +37,10 @@ const printPassTimes = function(passTimes) {
     console.log(`Next pass at ${datetime} for ${duration} seconds`);
   }
 };
+
 nextISSTimesForMyLocation((error, passTimes) => {
   if (error) {
     return console.log("It didn't work!", error);
   }
   printPassTimes(passTimes);
 });
-
