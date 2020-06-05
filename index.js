@@ -8,16 +8,23 @@ fetchMyIP((error, ip) => {
 
   console.log('It worked! Returned IP:' , ip);
 });
+
 const ipaddress = '45.72.254.245';
 
-const callback = (error, coordinates) => {
+fetchCoordsByIP(ipaddress, (error, coords) => {
   if (error) {
-    console.log("It'd not working", error);
+    console.log("It didn't work", error);
   } else {
-    console.log('Here are your coordinates', coordinates);
+    console.log('Here are your coordinates', coords);
   }
-};
+});
 
-const 
-fetchCoordsByIP(ipaddress, callback);
+const coordinates = { latitude: '43.73340', longitude: '-79.51160' };
 
+fetchISSFlyOverTimes(coordinates, (error, passes) => {
+  if (error) {
+    console.log("It didn't work", error);
+  } else {
+    console.log('Here are the overhead pass times', passes);
+  }
+});
